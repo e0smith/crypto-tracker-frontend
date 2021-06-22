@@ -1,5 +1,5 @@
 import React from 'react';
-
+import App from '../compontents/cards/Card.js'
 const Home = () => {
   return (
     <div
@@ -10,7 +10,7 @@ const Home = () => {
         height: '90vh'
       }}
     >
-      <h1>Home</h1>
+      <App />
     </div>
   );
 };

@@ -5,6 +5,8 @@ function App(){
     return(
         <div className="wrapper">
             <Card />
+            <Card />
+            <Card />
         </div>
     )
 }
@@ -12,8 +14,8 @@ function App(){
 function Card(){
     return(
         <div className="card">
-            <div className="card__body">
-                <img src="https://s3.envato.com/files/266452806/11022018-IMG_4933.jpg" />
+            <div className="container">
+                <img src="https://png.pngitem.com/pimgs/s/200-2007397_black-diamond-cool-remixit-idk-engagement-ring-vector.png"  alt="img"/>
                 <h2 className="card__title">Test Coin</h2>
                 <p className="card__description">Test Description</p>
                 <button className="card__btn">View Coin</button>

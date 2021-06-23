@@ -7,6 +7,18 @@ import SignUp from './pages/signup';
 import Portfolio from './pages/portfolio';
 
 class App extends Component {
+  state = {
+    crypto: []
+  }
+  componentDidMount(){
+    fetch("http://localhost:3000/cryptos")
+      .then(resp => resp.json())
+      .then(json => {
+        this.setState({
+          crypto: json
+        })
+      })
+  }
 
 
   render(){

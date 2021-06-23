@@ -1,6 +1,5 @@
 import React from 'react';
-import App from '../compontents/cards/Card.js'
-const Home = () => {
+const Info = () => {
   return (
     <div
       style={{
@@ -10,9 +9,9 @@ const Home = () => {
         height: '90vh'
       }}
     >
-      <App />
+      {/* <App /> */}
     </div>
   );
 };
 
-export default Home;
+export default Info;

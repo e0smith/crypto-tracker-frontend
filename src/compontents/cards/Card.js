@@ -1,30 +1,28 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 
-function App(){
-    return(
-        <div className="wrapper">
-            <Card />
-            <Card />
-            <Card />
-        </div>
-    )
-}
+// function App(){
+//     return(
+//         <div className="wrapper">
+//             <Card />
+//         </div>
+//     )
+// }
 
-function Card(){
+function Card(props){
     return(
         <div className="card">
             <div className="container">
-                <img src="https://png.pngitem.com/pimgs/s/200-2007397_black-diamond-cool-remixit-idk-engagement-ring-vector.png"  alt="img"/>
-                <h2 className="card__title">Test Coin</h2>
-                <p className="card__description">Test Description</p>
+                <img src={props.crypto.image}  alt="img"/>
+                <h2 className="card__title">{props.crypto.name}</h2>
+                <p className="card__description">${props.crypto.current_price}</p>
                 <button className="card__btn">View Coin</button>
             </div>
         </div>
     )
 }
 
-ReactDOM.render(<App />,
-    document.getElementById("root"))
+// ReactDOM.render(<App />,
+//     document.getElementById("root"))
 
-export default App;
+export default Card;

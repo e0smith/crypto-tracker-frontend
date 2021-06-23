@@ -5,6 +5,7 @@ import Navbar from './compontents/Navbar';
 import Home from './pages';
 import SignUp from './pages/signup';
 import Portfolio from './pages/portfolio';
+import Card from './compontents/cards/Card';
 
 class App extends Component {
   constructor(props) {
@@ -28,12 +29,14 @@ class App extends Component {
       <Router>
         <Navbar />
         <Switch>
-          <Route path='/' exact component={Home} />
+          {/* <Route path='/' exact component={Home} /> */}
           <Route path='/portfolio' component={Portfolio} />
           {/* <Route path='/currency/:id' compontent={Coin} /> */}
           {/* <Route path='/' component={Coin} /> */}
           <Route path='/sign-up' component={SignUp} />
         </Switch>
+        {/* <Card /> */}
+        {this.state.crypto.map((crypto) => (<Card crypto={crypto} />))}
       </Router>
     );
   }

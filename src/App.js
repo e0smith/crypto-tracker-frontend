@@ -7,8 +7,11 @@ import SignUp from './pages/signup';
 import Portfolio from './pages/portfolio';
 
 class App extends Component {
-  state = {
-    crypto: []
+  constructor(props) {
+    super(props);
+    this.state = {
+      crypto: []
+    }
   }
   componentDidMount(){
     fetch("http://localhost:3000/cryptos")
@@ -20,7 +23,6 @@ class App extends Component {
       })
   }
 
-
   render(){
     return (
       <Router>
@@ -28,6 +30,7 @@ class App extends Component {
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/portfolio' component={Portfolio} />
+          {/* <Route path='/currency/:id' compontent={Coin} /> */}
           {/* <Route path='/' component={Coin} /> */}
           <Route path='/sign-up' component={SignUp} />
         </Switch>

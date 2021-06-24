@@ -13,6 +13,7 @@ class App extends Component {
   componentDidMount(){
     this.props.getCryptos()
   }
+
   // constructor(props) {
   //   super(props);
   //   this.state = {
@@ -40,12 +41,20 @@ class App extends Component {
           {/* <Route path='/' component={Coin} /> */}
           <Route path='/sign-up' component={SignUp} />
         </Switch>
-        <Card />
-        {/* <div className="cards">
-          {this.state.crypto.map((crypto) => (<Card crypto={crypto} />))}
-        </div> */}
+        {/* <Card /> */}
+        <div className="cards">
+          {this.props.cryptos.map((crypto) => (<Card crypto={crypto} />))}
+        </div>
       </Router>
     );
   }
 }
-export default connect(null, { getCryptos })(App);
+
+const mapStateToProps = (state) => {
+  return{
+    cryptos: state.cryptos,
+    loading: state.loading
+  }
+}
+
+export default connect(mapStateToProps, { getCryptos })(App);

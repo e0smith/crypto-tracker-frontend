@@ -4,8 +4,9 @@ import './index.css';
 import App from './App';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux'
+import cryptosReducer from './reducers/cryptosReducer';
 
-const store = createStore(() => ({cryptos: []}), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(cryptosReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <React.StrictMode>

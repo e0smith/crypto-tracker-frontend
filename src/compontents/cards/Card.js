@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-function Card(){
-    const { image, name, current_price} = this.props.crypto
+function Card(props){
+    const { image, name, current_price} = props.crypto
     return(
         <div className="card">
             <div className="container">
@@ -14,5 +14,6 @@ function Card(){
         </div>
     )
 }
+
 
 export default Card;

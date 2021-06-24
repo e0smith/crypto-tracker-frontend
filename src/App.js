@@ -14,22 +14,6 @@ class App extends Component {
     this.props.getCryptos()
   }
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     crypto: []
-  //   }
-  // }
-  // componentDidMount(){
-  //   fetch("http://localhost:3000/cryptos")
-  //     .then(resp => resp.json())
-  //     .then(json => {
-  //       this.setState({
-  //         crypto: json
-  //       })
-  //     })
-  // }
-
   render(){
     return (
       <Router>

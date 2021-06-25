@@ -1,19 +1,27 @@
 import React from 'react';
+import Card from '../cards/Card';
+import {connect} from 'react-redux';
 
-
-const Home = () => {
+const Home = (props) => {
   return (
     <div
       style={{
-        display: 'flex',
+        display: 'grid',
         justifyContent: 'center',
-        alignItems: 'center',
-        height: '90vh'
+        alignItems: 'center'
       }}
     >
-      {/* <App /> */}
+          <div className="cards">
+            {props.cryptos.map((crypto) => (<Card crypto={crypto} />))}
+          </div>
     </div>
   );
 };
 
-export default Home;
+const mapStateToProps = (state) => {
+  return{
+    cryptos: state.cryptos
+  }
+}
+export default connect(mapStateToProps)(Home);
+

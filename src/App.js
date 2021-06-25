@@ -5,10 +5,9 @@ import Navbar from './compontents/Navbar';
 import Home from './compontents/pages';
 import SignUp from './compontents/pages/signup';
 import Portfolio from './compontents/pages/portfolio';
-import Card from './compontents/cards/Card';
 import {connect} from 'react-redux'
 import { getCryptos } from './actions/crypto';
-
+// import Coin from './compontents/Coin';
 class App extends Component {
   componentDidMount(){
     this.props.getCryptos()
@@ -25,10 +24,6 @@ class App extends Component {
           {/* <Route path='/' component={Coin} /> */}
           <Route path='/sign-up' component={SignUp} />
         </Switch>
-        {/* <Card /> */}
-        <div className="cards">
-          {this.props.cryptos.map((crypto) => (<Card crypto={crypto} />))}
-        </div>
       </Router>
     );
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PortfolioForm from '../PortfolioForm';
 const Portfolio = () => {
   return (
     <div
@@ -7,10 +7,11 @@ const Portfolio = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '90vh'
+        height: '20vh'
       }}
     >
-      <h1>Portfolio</h1>
+      {/* <h1>Portfolio</h1> */}
+      <PortfolioForm />
     </div>
   );
 };

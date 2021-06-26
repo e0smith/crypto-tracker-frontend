@@ -7,7 +7,7 @@ export const addPortfolio = (portfolioObj) => {
 
 export const createPortfolio = (portfolio) => {    
     return (dispatch) => {
-        fetch("https://localhost:3000/portfolios", {
+        fetch("http://localhost:3000/portfolios", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -20,4 +20,20 @@ export const createPortfolio = (portfolio) => {
                 dispatch(addPortfolio(portfolio))
             })
     }
+}
+
+export const getPortfolio = () => {
+    return (dispatch) => {
+          dispatch({type: "LOADING"})
+      
+          fetch("http://localhost:3000/portfolios")
+                .then(resp => resp.json())
+                .then(portfolios =>{
+                    dispatch({
+                        type: "GET_PORTFOLIOS",
+                        payload: portfolios
+                    })
+                } )
+              }
+
 }

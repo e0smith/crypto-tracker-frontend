@@ -1,15 +1,18 @@
 import React from 'react';
-const Info = () => {
+
+const Info = ({ match, cryptos}) => {
+  let crypto = cryptos.find(c => c.id === parseInt(match.params.id))
   return (
     <div
       style={{
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '90vh'
+        height: '20vh'
       }}
     >
-      {/* <App /> */}
+      <h1>{crypto.name}</h1>
+      
     </div>
   );
 };

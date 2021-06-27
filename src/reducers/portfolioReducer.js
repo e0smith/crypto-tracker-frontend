@@ -1,5 +1,5 @@
 const initialState = {
-    cryptos: [],
+    portfolio: [],
     loading: false
 }
 const portfolioReducer = (state = initialState, action ) => {
@@ -7,12 +7,12 @@ const portfolioReducer = (state = initialState, action ) => {
         case "ADD_PORTFOLIO":
             return {
                 ...state,
-                cryptos: [...state.cryptos, action.payload]
+                portfolio: [...state.portfolio, action.payload]
             }
         case "GET_PORTFOLIO":
             return {
                 ...state,
-                cryptos: [...state.cryptos, ...action.payload]
+                portfolio: [...state.portfolio, ...action.payload]
             }
         default:
             return state

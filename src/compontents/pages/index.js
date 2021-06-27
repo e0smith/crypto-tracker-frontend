@@ -12,7 +12,7 @@ const Home = (props) => {
       }}
     >
           <div className="cards">
-            {props.cryptos.map((crypto) => (<Card crypto={crypto} />))}
+            {props.cryptos.cryptos.map((crypto) => (<Card crypto={crypto} />))}
           </div>
     </div>
   );

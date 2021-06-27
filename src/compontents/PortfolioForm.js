@@ -4,20 +4,20 @@ import { createPortfolio } from "../actions/portfolio.js"
 class PortfolioForm extends Component {
 
     state={
-        name: "",
+        name:'',
         quantity: 0
     }
 
-    handleChange = (e) => {
-        this.setState({[e.target.name]: e.target.value})
+    handleChange = (event) => {
+        this.setState({[event.target.name]: event.target.value})
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault()
+    handleSubmit = (event) => {
+        event.preventDefault()
         this.props.createPortfolio(this.state)
         this.setState({
-            name: "",
-            quantity: 0
+            name:'',
+            quantity:''
         })
     }
 
@@ -42,4 +42,4 @@ class PortfolioForm extends Component {
     }
 }
 
-export default connect(null, { createPortfolio })(PortfolioForm);
+export default connect(null, {createPortfolio})(PortfolioForm);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createPortfolio } from "../actions/portfolio.js"
+import { createPortfolio } from "../../actions/portfolio.js"
 class PortfolioForm extends Component {
 
     state={

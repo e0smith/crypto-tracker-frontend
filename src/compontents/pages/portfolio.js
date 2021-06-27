@@ -1,19 +1,21 @@
 import React from 'react';
-import PortfolioForm from '../PortfolioForm';
-const Portfolio = () => {
+import PortfolioForm from '../portfolio/PortfolioForm';
+import PortfolioShow from '../portfolio/PortfolioShow';
+import {connect} from 'react-redux';
+
+const Portfolio = (props) => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '20vh'
-      }}
-    >
-      {/* <h1>Portfolio</h1> */}
-      <PortfolioForm />
+    <div>
+      <h1>Portfolio</h1><br />
+      <PortfolioForm /><br /><br />
+      {props.portfolio.portfolio.map((portfolio) => (<PortfolioShow portfolio={portfolio} />))}
     </div>
   );
 };
 
-export default Portfolio;
+const mapStateToProps = (state) => {
+  return{
+    portfolio: state.portfolio
+  }
+}
+export default connect(mapStateToProps)(Portfolio);

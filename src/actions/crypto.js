@@ -1,10 +1,3 @@
-export const addCrypto = (cryptoObj) => {
-    return {
-        type: "ADD_CRYPTO",
-        payload: cryptoObj
-    }
-}
-
 export const getCryptos = () => {
     return (dispatch) => {
         fetch("http://localhost:3000/cryptos")

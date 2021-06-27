@@ -8,9 +8,11 @@ import SignUp from './compontents/pages/signup';
 import Portfolio from './compontents/pages/portfolio';
 import {connect} from 'react-redux'
 import { getCryptos } from './actions/crypto';
+import { getPortfolio } from './actions/portfolio';
 class App extends Component {
   componentDidMount(){
     this.props.getCryptos()
+    this.props.getPortfolio()
   }
 
   render(){
@@ -40,4 +42,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { getCryptos })(App);
+export default connect(mapStateToProps, { getCryptos, getPortfolio })(App);

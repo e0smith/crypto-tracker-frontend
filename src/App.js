@@ -38,6 +38,7 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return{
     cryptos: state.cryptos,
+    portfolio: state.Portfolio,
     loading: state.loading
   }
 }

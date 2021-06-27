@@ -10,30 +10,27 @@ export const createPortfolio = (portfolio) => {
         fetch("http://localhost:3000/portfolios", {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'accept': 'application/json'
+                "Content-Type": "application/json",
+                Accept: "application/json",
             },
-            body: JSON.stringify({portfolio}),
+            body: JSON.stringify(portfolio),
         })
-            .then(resp => resp.json())
-            .then(portfolio => {
-                dispatch(addPortfolio(portfolio))
+            .then((response) => response.json())
+            .then((portfolio) => {
+                dispatch({ type: "CREATE_PORTFOLIO", payload: portfolio})
             })
     }
 }
 
 export const getPortfolio = () => {
     return (dispatch) => {
-          dispatch({type: "LOADING"})
-      
-          fetch("http://localhost:3000/portfolios")
-                .then(resp => resp.json())
-                .then(portfolios =>{
-                    dispatch({
-                        type: "GET_PORTFOLIOS",
-                        payload: portfolios
-                    })
-                } )
-              }
-
+        fetch("http://localhost:3000/portfolios")
+            .then(resp => resp.json())
+            .then(portfolio => {
+                dispatch({
+                    type: "GET_PORTFOLIO",
+                    payload: portfolio
+                })
+            })
+        }
 }

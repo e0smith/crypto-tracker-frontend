@@ -12,13 +12,14 @@ class PortfolioForm extends Component {
         this.setState({[event.target.name]: event.target.value})
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault()
+    handleSubmit = () => {
+        // event.preventDefault()
         this.props.createPortfolio(this.state)
         this.setState({
             name:'',
             quantity:''
         })
+        // window.location.reload()
     }
 
     render(){

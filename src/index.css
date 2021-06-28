@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 100px 100px;
+  /* grid-template-areas: "header header"
+                          "aside main"
+                          "footer footer"; */
+}
+
+.header {
+  grid-area: header;
+  background-color: aqua;
+}
+
+.main {
+  grid-area: main;
+  background-color: lightgreen;
+}
+
+.aside {
+  grid-area: aside;
+  background-color: yellow;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: pink;
+}

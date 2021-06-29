@@ -4,7 +4,6 @@ import PortfolioShow from '../portfolio/PortfolioShow';
 import {connect} from 'react-redux';
 
 const Portfolio = (props) => {
-  // const portfolios = props.portfolio.portfolio.map((p) => p)
   return (
     <div>
       <h1>Portfolio</h1><br />

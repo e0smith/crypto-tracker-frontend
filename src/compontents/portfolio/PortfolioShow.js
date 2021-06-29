@@ -11,9 +11,8 @@ function PortfolioShow(props){
     // console.log(props.portfolio)
     return(
         <div className='card'>
-            <p className="portfolio__info">Name: {name} Quantity: {quantity}</p>
+            <p className="portfolio__info">Name: {name} Quantity: {quantity} Total Value = {<PortfolioCalculator portfolio={props.portfolio} />}</p>
             <DeletePortfolio portfolio={props.portfolio}/>
-            <PortfolioCalculator portfolio={name} />
             {/* <button onClick={() => setFormBoolean(!formBoolean)} >Edit Portfolio</button> */}
             {/* {formBoolean? <PortfolioEdit portfolio={id}/>: console.log(formBoolean)} */}
         </div>

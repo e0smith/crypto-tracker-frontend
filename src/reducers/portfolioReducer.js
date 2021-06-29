@@ -14,6 +14,8 @@ const portfolioReducer = (state = initialState, action ) => {
                 ...state,
                 portfolio: [...state.portfolio, ...action.payload]
             }
+        case "DELETE_PORTFOLIO":
+            return state.portfolio.filter(portfolio => portfolio.id !== action.payload)
         default:
             return state
     }

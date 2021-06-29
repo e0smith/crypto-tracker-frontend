@@ -53,3 +53,12 @@ export const editPortfolio = (data) => {
         );
     };
   };
+
+export const deletePortfolio = (Id) => {
+    return (dispatch) => {
+        dispatch({ type: "DELETE_PORTFOLIO", payload: Id });
+        fetch(`http://localhost:3000/portfolios/${Id}`, {
+        method: "DELETE",
+        });
+    };
+};

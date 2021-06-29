@@ -6,12 +6,20 @@ import {connect} from 'react-redux';
 const Portfolio = (props) => {
   return (
     <div>
-      <h1>Portfolio</h1><br />
-      <PortfolioForm /><br /><br />
-      {/* {portfolios.map((p) => <PortfolioShow portfolio={p} />)} */}
-      {/* <PortfolioEdit /> */}
-      {/* {props.portfolio.portfolio.map((portfolio) => (<PortfolioEdit portfolio={portfolio} />))} */}
-      {props.portfolio.portfolio.map((portfolio) => (<PortfolioShow portfolio={portfolio} />))}
+      <br /><h1>Portfolio</h1><br />
+      <PortfolioForm />
+      <br />
+      <br />
+      <br />
+      <br />
+      <div 
+            style={{
+              display: 'grid',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}>
+              {props.portfolio.portfolio.map((portfolio) => (<PortfolioShow portfolio={portfolio} />))}
+            </div>
     </div>
   );
 };

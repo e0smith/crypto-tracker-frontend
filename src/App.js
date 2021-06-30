@@ -1,11 +1,12 @@
 import { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navbar from './compontents/Navbar';
-import Home from './compontents/pages';
-import Info from './compontents/pages/coin';
-import SignUp from './compontents/pages/signup';
-import Portfolio from './compontents/pages/portfolio';
+import Navbar from './components/Navbar';
+import Home from './components/pages';
+import Info from './components/pages/coin';
+import SignUp from './components/pages/signup';
+import SignIn from './components/pages/signin';
+import Portfolio from './components/pages/portfolio';
 import {connect} from 'react-redux'
 import { getCryptos } from './actions/crypto';
 import { getPortfolio } from './actions/portfolio';
@@ -29,6 +30,7 @@ class App extends Component {
           />
           {/* <Route path='/' component={Coin} /> */}
           <Route path='/sign-up' component={SignUp} />
+          <Route path='/sign-in' component={SignIn} />
         </Switch>
       </Router>
     );

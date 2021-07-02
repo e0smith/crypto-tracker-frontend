@@ -21,6 +21,7 @@ function SignIn(){
             .then((user) => {
               localStorage.setItem("user", user.id)
               history.push("/home")
+              window.location.reload();
             })
           
     }
@@ -47,4 +48,11 @@ function SignIn(){
     );
   };
 
-  export default SignIn;
+// export const HandleLogOut = () => {
+//     localStorage.user = ""
+//     const history = useHistory()
+//     history.push("/home")
+// }
+
+
+export default SignIn;

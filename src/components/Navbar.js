@@ -103,8 +103,14 @@ const Navbar = () => {
           <NavLink to='/portfolio' activeStyle>
             Portfolio
           </NavLink>
+          <NavLink to='/info' activeStyle>
+            Info
+          </NavLink>
           <NavLink to='/sign-up' activeStyle>
             Sign Up
+          </NavLink>
+          <NavLink to='/log-out' activeStyle>
+            Log Out
           </NavLink>
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}

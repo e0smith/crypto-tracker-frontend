@@ -2,15 +2,21 @@ import { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
-import Home from './components/pages';
+import Home from './components/pages/home';
 import Info from './components/pages/coin';
 import SignUp from './components/pages/signup';
 import SignIn from './components/pages/signin';
 import Portfolio from './components/pages/portfolio';
+import ProjectInfo from './components/pages/info';
+import LogOut from './components/pages/logout';
 import {connect} from 'react-redux'
 import { getCryptos } from './actions/crypto';
 import { getPortfolio } from './actions/portfolio';
 class App extends Component {
+
+  state = {
+    localStorage: 0
+  }
   componentDidMount(){
     this.props.getCryptos()
     this.props.getPortfolio()
@@ -31,6 +37,8 @@ class App extends Component {
           {/* <Route path='/' component={Coin} /> */}
           <Route path='/sign-up' component={SignUp} />
           <Route path='/sign-in' component={SignIn} />
+          <Route path='/info' component={ProjectInfo} />
+          <Route path='/log-out' component={LogOut} />
         </Switch>
       </Router>
     );

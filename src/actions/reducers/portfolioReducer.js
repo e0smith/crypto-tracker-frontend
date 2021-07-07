@@ -1,5 +1,6 @@
 const initialState = {
     portfolio: [],
+    // user: localStorage.user,
     loading: false
 }
 const portfolioReducer = (state = initialState, action ) => {
@@ -16,8 +17,19 @@ const portfolioReducer = (state = initialState, action ) => {
             }
         case "DELETE_PORTFOLIO":
             return state.portfolio.filter(portfolio => portfolio.id !== action.payload)
-        default:
-            return state
+        
+        // case "GET_USER":
+        //     return {
+        //         ...state,
+        //         user: state.user
+        //     }
+        // case "SET_USER":
+        //     // debugger
+        //     return {
+        //         user: state.user = ""
+        //     }
+            default:
+                return state
     }
 }
 

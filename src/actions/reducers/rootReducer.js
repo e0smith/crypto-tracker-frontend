@@ -4,7 +4,7 @@ import portfolioReducer from './portfolioReducer'
 
 const rootReducer = combineReducers({
     cryptos: cryptosReducer,
-    portfolio: portfolioReducer
+    portfolio: portfolioReducer,
 })
 
 export default rootReducer;

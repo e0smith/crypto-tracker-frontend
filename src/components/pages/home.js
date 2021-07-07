@@ -1,16 +1,13 @@
 import React from 'react';
-import CryptoCard from '../cards/Card';
+import CryptoCard from '../Card';
 import {connect} from 'react-redux';
 
-const Home = (props) => {
+function Home(props){
   return (
-    <div
-      style={{
-        display: 'grid',
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}
-    >
+    <div className="home">
+      <br />
+      <br />
+      <br />
           <div className="cards">
             {props.cryptos.cryptos.map((crypto) => (<CryptoCard crypto={crypto} />))}
           </div>
@@ -20,8 +17,9 @@ const Home = (props) => {
 
 const mapStateToProps = (state) => {
   return{
-    cryptos: state.cryptos
+    cryptos: state.cryptos,
   }
 }
+
 export default connect(mapStateToProps)(Home);
 

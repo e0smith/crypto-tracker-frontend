@@ -21,8 +21,8 @@ function SignUp(){
           .then((user) => {
             localStorage.setItem("user", user.id)
             history.push("/home")
+            window.location.reload()
           })
-        
   }
   console.log("login: ", username, password)
   return (
@@ -34,15 +34,14 @@ function SignUp(){
         height: '90vh'
       }}
     >
-      <h1>Sign Up</h1>
-      <from>
-            <h5 className="loginHFive">username</h5>
+      <h1>Sign Up</h1><br />
+      <form>
+            <h5 className="signup">username</h5>
             <input className='loginInput' type='username' value={username} onChange={e => setUsername(e.target.value)}/>
-
-              <h5 className="loginHFive">Password</h5>
+              <h5 className="signup">Password</h5>
               <input className='loginInput' type='Password' value={password} onChange={e => setPassword(e.target.value)}/>
               <button  onClick={handleSignUp} className='signInButton'  type='submit'>Sign Up</button>
-          </from>
+          </form>
     </div>
   );
 };

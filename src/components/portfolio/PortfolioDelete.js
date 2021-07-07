@@ -12,7 +12,9 @@ const DeletePortfolio = (props) => {
     let portfolio = props.portfolio
 
  return (
-     <button onClick={() => handleDelete(portfolio)}>Delete</button>
+     <div className="dlt-btn">
+         <button onClick={() => handleDelete(portfolio)}>Delete</button>
+     </div>
  )
 
 }

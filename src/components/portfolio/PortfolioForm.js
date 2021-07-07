@@ -20,12 +20,11 @@ class PortfolioForm extends Component {
             name:'',
             quantity:''
         })
-        // window.location.reload()
     }
 
     render(){
         return(
-            <div className="field" >
+            <div className="portfolio__form" >
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="name">Currency Name: </label>

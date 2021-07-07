@@ -3,7 +3,7 @@ import PortfolioForm from '../portfolio/PortfolioForm';
 import PortfolioShow from '../portfolio/PortfolioShow';
 import {connect} from 'react-redux';
 
-const Portfolio = (props) => {
+function Portfolio(props){
   if (localStorage.user !== "0"){
     return (
       <div>
@@ -46,3 +46,8 @@ const mapStateToProps = (state) => {
 
 }
 export default connect(mapStateToProps)(Portfolio);
+
+// const dispatch = useDispatch()
+// useEffect(() => {
+//   dispatch(getPortfolio(localStorage.user))
+// },[])

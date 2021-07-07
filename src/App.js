@@ -14,9 +14,6 @@ import { getCryptos } from './actions/crypto';
 import { getPortfolio } from './actions/portfolio';
 class App extends Component {
 
-  state = {
-    localStorage: 0
-  }
   componentDidMount(){
     this.props.getCryptos()
     this.props.getPortfolio()
@@ -34,7 +31,6 @@ class App extends Component {
             path="/currency/:id"
             render={(props) => <Info {...props} cryptos={this.props.cryptos} />}
           />
-          {/* <Route path='/' component={Coin} /> */}
           <Route path='/sign-up' component={SignUp} />
           <Route path='/sign-in' component={SignIn} />
           <Route path='/info' component={ProjectInfo} />
@@ -54,3 +50,6 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, { getCryptos, getPortfolio })(App);
+
+
+// if((localStorage.user == "" ) ? localStorage.user = "0" : console.log(localStorage.user) )

@@ -37,10 +37,10 @@ function SignIn(){
       >
         <h1>Sign In</h1>
         <from>
-              <h5 className="loginHFive">username</h5>
+              <h5 className="signup">username</h5>
               <input className='loginInput' type='username' value={username} onChange={e => setUsername(e.target.value)}/>
   
-                <h5 className="loginHFive">Password</h5>
+                <h5 className="signup">Password</h5>
                 <input className='loginInput' type='Password' value={password} onChange={e => setPassword(e.target.value)}/>
                 <button  onClick={handleSignIn} className='signInButton'  type='submit'>Sign In</button>
             </from>

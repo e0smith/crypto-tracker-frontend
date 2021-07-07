@@ -35,6 +35,31 @@ export const getPortfolio = () => {
         }
 }
 
+export const deletePortfolio = (Id) => {
+    return (dispatch) => {
+        dispatch({ type: "DELETE_PORTFOLIO", payload: Id });
+        fetch(`http://localhost:3000/users/${localStorage.user}/portfolios/${Id}`, {
+        method: "DELETE",
+        });
+    };
+};
+
+
+
+
+
+// export const getUserData = () => {
+//     return (dispatch) => {
+//         fetch(`http://localhost:3000/users/${localStorage.user}`)
+//             .then(resp => resp.json())
+//             .then(user => {
+//                 dispatch({
+//                     type: "GET_USER",
+//                     payload: user
+//                 })
+//             })
+//         }
+// }
 // export const editPortfolio = (data) => {
 //     // debugger;
 //     return (dispatch) => {
@@ -53,12 +78,3 @@ export const getPortfolio = () => {
 //         );
 //     };
 //   };
-
-export const deletePortfolio = (Id) => {
-    return (dispatch) => {
-        dispatch({ type: "DELETE_PORTFOLIO", payload: Id });
-        fetch(`http://localhost:3000/users/${localStorage.user}/portfolios/${Id}`, {
-        method: "DELETE",
-        });
-    };
-};

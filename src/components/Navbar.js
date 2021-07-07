@@ -3,6 +3,7 @@ import { FaBars } from 'react-icons/fa';
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from '../images/logo.jpeg'
+
 export const Nav = styled.nav`
   background: #000;
   height: 80px;
@@ -87,13 +88,12 @@ export const NavBtnLink = styled(Link)`
 `;
 
 
-const Navbar = () => {
+function Navbar(){
   return (
     <>
       <Nav>
         <NavLink to=''>
         <img width="80px" height="auto" className="img-responsive" src={Logo}  alt="logo"  />
-               
         </NavLink>
         <Bars />
         <NavMenu>
@@ -107,20 +107,38 @@ const Navbar = () => {
             Info
           </NavLink>
           <NavLink to='/sign-up' activeStyle>
-            Sign Up
+            {localStorage.user !== "0" ? "" : "Sign Up"}
           </NavLink>
-          <NavLink to='/log-out' activeStyle>
-            Log Out
-          </NavLink>
-          {/* Second Nav */}
-          {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>
-        <NavBtn>
-          <NavBtnLink to='/sign-in'>Sign In</NavBtnLink>
-        </NavBtn>
+        {localStorage.user !== "0" ? 
+          <NavBtn>
+            <NavBtnLink to='/log-out'>Log Out</NavBtnLink>
+          </NavBtn> : 
+          <NavBtn>
+            <NavBtnLink to='/sign-in'>Sign In</NavBtnLink>
+          </NavBtn>}
       </Nav>
     </>
   );
 };
 
+
 export default Navbar;
+
+
+
+      // { <NavLink to='/log-out' activeStyle>
+      // {localStorage.user !== "0" ? "Log Out" : ""}
+      // </NavLink> }
+      // {/* Second Nav */}
+      // { <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> }
+
+// const history = useHistory()
+// const dispatch = useDispatch()
+// const {user} = useSelector((state) => state.portfolio)
+// const handleLogOut = (event) => {
+//   event.preventDefault()
+//   console.log("LOGGING")
+//   dispatch({type: "SET_USER", payload: "" })
+//   history.replace("/home")
+// }

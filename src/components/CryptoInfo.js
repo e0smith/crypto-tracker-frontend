@@ -1,4 +1,4 @@
-import  React, { Compontent} from 'react';
+import  React, { Compontent } from 'react';
 
 class CryptoContainer extends Compontent {
 

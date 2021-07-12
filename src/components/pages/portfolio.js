@@ -46,8 +46,3 @@ const mapStateToProps = (state) => {
 
 }
 export default connect(mapStateToProps)(Portfolio);
-
-// const dispatch = useDispatch()
-// useEffect(() => {
-//   dispatch(getPortfolio(localStorage.user))
-// },[])

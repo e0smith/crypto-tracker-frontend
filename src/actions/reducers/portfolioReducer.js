@@ -15,19 +15,10 @@ const portfolioReducer = (state = initialState, action ) => {
                 ...state,
                 portfolio: [...state.portfolio, ...action.payload]
             }
+
         case "DELETE_PORTFOLIO":
             return state.portfolio.filter(portfolio => portfolio.id !== action.payload)
         
-        // case "GET_USER":
-        //     return {
-        //         ...state,
-        //         user: state.user
-        //     }
-        // case "SET_USER":
-        //     // debugger
-        //     return {
-        //         user: state.user = ""
-        //     }
             default:
                 return state
     }

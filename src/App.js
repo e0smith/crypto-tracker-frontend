@@ -50,6 +50,6 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, { getCryptos, getPortfolio })(App);
-
+// mapDispatchToProps is dispatching even when desconstructed {action}
 
 // if((localStorage.user == "" ) ? localStorage.user = "0" : console.log(localStorage.user) )

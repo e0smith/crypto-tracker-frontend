@@ -35,6 +35,27 @@ export const getPortfolio = () => {
         }
 }
 
+
+export const updatePortfolio = (portfolio, id) => {    
+    return (dispatch) => {
+        fetch(`http://localhost:3000/users/${localStorage.user}/portfolios/${id}`, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: JSON.stringify(portfolio),
+        })
+            .then(resp => resp.json())
+            .then(portfolio => {
+                dispatch({
+                    type: "GET_PORTFOLIO",
+                    payload: portfolio
+                })
+            })
+    }
+}
+
 export const deletePortfolio = (Id) => {
     return (dispatch) => {
         dispatch({ type: "DELETE_PORTFOLIO", payload: Id });
@@ -44,37 +65,3 @@ export const deletePortfolio = (Id) => {
     };
 };
 
-
-
-
-
-// export const getUserData = () => {
-//     return (dispatch) => {
-//         fetch(`http://localhost:3000/users/${localStorage.user}`)
-//             .then(resp => resp.json())
-//             .then(user => {
-//                 dispatch({
-//                     type: "GET_USER",
-//                     payload: user
-//                 })
-//             })
-//         }
-// }
-// export const editPortfolio = (data) => {
-//     // debugger;
-//     return (dispatch) => {
-//       fetch(`http://localhost:3000/users/${localStorage.user}/portfolios/${data.id}`, {
-//         headers: {
-//           "Content-Type": "application/json",
-//           Accept: "application/json",
-//         },
-//         method: "PATCH",
-//         body: JSON.stringify(data),
-//       })
-//         .then((response) => response.json())
-//         .then((portfolio) => {
-//             dispatch({ type: "EDIT_PORTFOLIO", payload: portfolio });
-//           }
-//         );
-//     };
-//   };

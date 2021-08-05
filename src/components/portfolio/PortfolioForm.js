@@ -14,7 +14,6 @@ class PortfolioForm extends Component {
     }
 
     handleSubmit = () => {
-        // event.preventDefault()
         this.props.createPortfolio(this.state)
         this.setState({
             name:'',

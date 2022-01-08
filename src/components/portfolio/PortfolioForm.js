@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createPortfolio } from "../../actions/portfolio.js"
+import { PortfolioFormDiv } from '../Container.style'
 class PortfolioForm extends Component {
 
     state={
@@ -23,7 +24,7 @@ class PortfolioForm extends Component {
 
     render(){
         return(
-            <div className="portfolio__form" >
+            <PortfolioFormDiv >
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="name">Currency Name: </label>
@@ -37,7 +38,7 @@ class PortfolioForm extends Component {
                         <input type="submit" value="Add to Portfolio" />
                     </div>
                 </form>
-            </div>
+            </PortfolioFormDiv>
         )
     }
 }

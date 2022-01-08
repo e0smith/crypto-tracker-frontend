@@ -1,19 +1,15 @@
 import React from 'react';
+import { CryptoInfoDiv, Image } from '../Container.style';
+
 
 const Info = ({ match, cryptos}) => {
   let crypto = cryptos.cryptos.find(c => c.id === parseInt(match.params.id))
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '120vh'
-      }}
-    >
-      <div>
-        <img src={crypto.image}  alt="img" align="right"/><br /><br /><br /><br /><br />
-        <h1 align="center" >{crypto.name}({crypto.symbol})</h1><br />
+    <CryptoInfoDiv>
+        <h1>{crypto.name}({crypto.symbol})</h1><br />
+        <Image>
+          <img src={crypto.image}  alt="img" align="right"/><br />
+        </Image>
         <h3>Current Price: ${crypto.current_price}</h3><br />
         <h3>Market Cap: ${crypto.market_cap}</h3><br />
         <h3>24 Hour Market Cap Change: ${crypto.market_cap_change_24h}</h3><br />
@@ -30,8 +26,7 @@ const Info = ({ match, cryptos}) => {
         <h3>One Year Price Change Percentage: {crypto.price_change_percentage_1y}% </h3><br />
         <h3>Total Supply: {crypto.total_supply}</h3><br />
         <h3>Circulating Supply: {crypto.circulating_supply}</h3>
-      </div>
-    </div>
+    </CryptoInfoDiv>
   );
 };
 
